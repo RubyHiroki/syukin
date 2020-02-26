@@ -1,2 +1,4 @@
-<h1>Moneys#index</h1>
-<p>Find me in app/views/moneys/index.html.erb</p>
+<% @moneys.each do |money| %>
+  <p><%= money.deposit %></p>
+  <p><%= money.sum_money %></p>
+<% end %>

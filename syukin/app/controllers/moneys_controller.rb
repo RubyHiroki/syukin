@@ -1,5 +1,6 @@
 class MoneysController < ApplicationController
   def index
+    @moneys = Money.all
   end
 
   def create
