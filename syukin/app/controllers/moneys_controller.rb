@@ -7,6 +7,7 @@ class MoneysController < ApplicationController
   end
 
   def new
+    @money = Money.new
   end
 
   def update
