@@ -1,2 +1,7 @@
-<h1>Moneys#new</h1>
-<p>Find me in app/views/moneys/new.html.erb</p>
+<%= form_for @money do |f| %>
+  <p>
+    <%= f.label :deposit %>
+    <%= f.text_field :deposit %>
+  </p>
+  <%= f.submit %>
+<% end %>
