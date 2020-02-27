@@ -4,7 +4,7 @@ class MoneysController < ApplicationController
   end
 
   def create
-    @money = Money.new(params[:deposit])
+    @money = Money.new(params.require(:money).permit(:deposit))
     @money.save
     redirect_to moneys_path
   end
