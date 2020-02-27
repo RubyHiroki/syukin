@@ -1,6 +1,7 @@
 class MoneysController < ApplicationController
   def index
     @moneys = Money.all
+    @extra_money = Money.all.sum(:deposit)
   end
 
   def create
