@@ -1,6 +1,7 @@
 <% @moneys.each do |money| %>
   <p><%= money.deposit %></p>
+  <p><%= @extra_money %></p>
 <% end %>
-<%= @extra_money %>
+<%= @sum_money %>
 <%= link_to "回収金入力", new_money_path %>
 <%= link_to "トップ", root_path %>
