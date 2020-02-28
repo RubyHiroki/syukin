@@ -1,7 +1,6 @@
-<% @moneys.each do |money| %>
-  <p><%= money.deposit %></p>
-  <p><%= @extra_money %></p>
+<% @moneys_arr.each_with_index do |data, i| %>
+  <%= data %>
+  <%= data[i] - 1360 %>
 <% end %>
-<%= @sum_money %>
 <%= link_to "回収金入力", new_money_path %>
 <%= link_to "トップ", root_path %>
