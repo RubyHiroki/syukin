@@ -1,10 +1,14 @@
 <% sum_money = [] %>
 <% @moneys_arr.each do |data| %>
-  <p><%= data %></p>
-  <% extra_money = data - 1360 %>
+  <p>今日の回収金</p>
+  <p><%= data[1] %></p>
+  <p>損益</p>
+  <% extra_money = data[1] - 1360 %>
   <p><%= extra_money %></p>
+  <p><%= link_to "編集", edit_money_path(data[0]) %></p>
   <% sum_money << extra_money %>
 <% end %>
+  <p>現在の余った回収金</p>
   <p><%= sum_money.sum %></p>
 <%= link_to "回収金入力", new_money_path %>
 <%= link_to "トップ", root_path %>

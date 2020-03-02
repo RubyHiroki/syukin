@@ -1,7 +1,7 @@
 class MoneysController < ApplicationController
   def index
     @moneys = Money.all
-    @moneys_arr = @moneys.pluck(:deposit)
+    @moneys_arr = @moneys.pluck(:id, :deposit)
   end
 
   def create
