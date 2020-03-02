@@ -5,7 +5,7 @@ class MoneysController < ApplicationController
   end
 
   def create
-    @money = Money.new(params.require(:money).permit(:deposit))
+    @money = Money.new(money_params)
     @money.save
     redirect_to moneys_path
   end
@@ -15,18 +15,27 @@ class MoneysController < ApplicationController
   end
 
   def update
-    @money = Money.find(params[:id])
-    @money.update(params.require(:money).permit(:deposit))
+    @money = find_money_by_id
+    @money.update(money_params)
     redirect_to moneys_path
   end
 
   def edit
-    @money = Money.find(params[:id])
+    @money = find_money_by_id
   end
 
   def destroy
   end
 
   def show
+  end
+
+  private
+  def money_params
+    params.require(:money).permit(:deposit)
+  end
+  
+  def find_money_by_id
+    Money.find(params[:id])
   end
 end
