@@ -1,2 +1,9 @@
-<h1>Moneys#edit</h1>
-<p>Find me in app/views/moneys/edit.html.erb</p>
+<%= form_for @money,:url => {:action => :update} do |f| %>
+  <p>
+    <%= f.label :deposit, "回収金入力" %>
+    <%= f.text_field :deposit %>
+  </p>
+  <%= f.submit "登録" %>
+<% end %>
+
+<%= link_to "トップ", root_path %>

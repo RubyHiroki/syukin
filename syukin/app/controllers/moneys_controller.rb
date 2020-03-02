@@ -2,11 +2,10 @@ class MoneysController < ApplicationController
   def index
     @moneys = Money.all
     @moneys_arr = @moneys.pluck(:deposit)
-    @sum_money = Money.all.sum(:extra_money)
   end
 
   def create
-    @money = Money.new(params.require(:money).permit(:deposit, :extra_money, :sum_money))
+    @money = Money.new(params.require(:money).permit(:deposit))
     @money.save
     redirect_to moneys_path
   end
@@ -16,9 +15,13 @@ class MoneysController < ApplicationController
   end
 
   def update
+    @money = Money.find(params[:id])
+    @money.update(params.require(:money).permit(:deposit))
+    redirect_to moneys_path
   end
 
   def edit
+    @money = Money.find(params[:id])
   end
 
   def destroy
