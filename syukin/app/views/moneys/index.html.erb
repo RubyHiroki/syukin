@@ -1,12 +1,11 @@
 <% @moneys_arr.each do |data| %>
   <p><%= data[2].strftime('%m月%d日') %>の回収金</p>
-  <% m = data[2].strftime('%m') %>
-  <%= m %>
   <p><%= data[1] %>円</p>
   <p>損益</p>
   <% extra_money = data[1] - 1360 %>
   <p><%= extra_money %>円</p>
   <p><%= link_to "編集", edit_money_path(data[0]) %></p>
+  <p><%= link_to "削除", money_path(data[0]), method: :delete %></p>
   <% @sum_money << extra_money %>
 <% end %>
   <p>現在の余った回収金</p>

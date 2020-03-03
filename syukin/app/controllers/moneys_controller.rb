@@ -26,6 +26,9 @@ class MoneysController < ApplicationController
   end
 
   def destroy
+    @money = find_money_by_id
+    @money.destroy
+    redirect_to moneys_path
   end
 
   def show
