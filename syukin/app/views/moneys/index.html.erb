@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <% @moneys_arr.each do |data| %>
   <p><%= data[2].strftime('%m月%d日') %>の回収金</p>
   <p><%= data[1] %>円</p>

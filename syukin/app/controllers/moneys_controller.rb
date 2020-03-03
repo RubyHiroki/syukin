@@ -7,8 +7,11 @@ class MoneysController < ApplicationController
 
   def create
     @money = Money.new(money_params)
-    @money.save
-    redirect_to moneys_path
+    if @money.save
+      redirect_to moneys_path, notice: "今日の回収金#{@money.deposit}円を登録しました"
+    else
+      render action: :new
+    end
   end
 
   def new
