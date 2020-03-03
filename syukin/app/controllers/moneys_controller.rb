@@ -20,8 +20,11 @@ class MoneysController < ApplicationController
 
   def update
     @money = find_money_by_id
-    @money.update(money_params)
-    redirect_to moneys_path
+    if @money.update(money_params)
+      redirect_to moneys_path, notice: "編集しました"
+    else
+      render action: :edit
+    end
   end
 
   def edit
@@ -31,7 +34,7 @@ class MoneysController < ApplicationController
   def destroy
     @money = find_money_by_id
     @money.destroy
-    redirect_to moneys_path
+    redirect_to moneys_path, notice: "削除しました"
   end
 
   def show
