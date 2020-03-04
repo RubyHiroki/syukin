@@ -1,4 +1,7 @@
 <%= form_for @money,:url => {:action => :create} do |f| %>
+  <% if @money.errors.any? %>
+    <p>入力値が正しくありません</p>
+  <% end %>
   <p>
     <%= f.label :deposit, "回収金入力" %>
     <%= f.text_field :deposit %>
