@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+   font-size: 62.5%;
+   letter-spacing: .5rem;
+ }
+ body {
+   background-color: #1d577e;
+ }
+ h1, p, a {
+   color: #dca682;
+ }
+ h1 {
+   font-size: 4.5rem;
+   
+ }
+ span {
+   color: #ff6600;
+ }
+ a {
+   text-decoration: none;
+   font-size: 1.3rem;
+ }
