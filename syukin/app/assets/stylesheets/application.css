@@ -39,3 +39,21 @@
    text-align: center;
    margin: 30px auto;
  }
+
+ /* 回収金入力編集画面 */
+ input {
+   font-size: 1.5rem;
+ }
+ .pagetitle {
+   font-size: 3rem;
+ }
+ .flash {
+   color: rgb(139, 70, 70);
+ }
+ .main {
+   text-align: center;
+ }
+ .input-field {
+   margin: 50px auto 100px;
+   font-size: 2.5rem;
+ }

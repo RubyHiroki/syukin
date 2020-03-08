@@ -1,13 +1,15 @@
-<h1>回収金入力</h1>
+<h1 class="pagetitle">回収金入力</h1>
 <%= form_for @money,:url => {:action => :create} do |f| %>
-  <% if @money.errors.any? %>
-    <p>入力値が正しくありません</p>
-  <% end %>
-  <p>
-    <%= f.label :deposit, "回収金入力" %>
-    <%= f.number_field :deposit %>
-  </p>
-  <%= f.submit "登録" %>
+  <div class="main">
+    <% if @money.errors.any? %>
+      <p class="flash">入力値が正しくありません</p>
+    <% end %>
+    <p class="input-field">
+      <%= f.label :deposit, "回収金入力" %>
+      <%= f.number_field :deposit %>
+    </p>
+    <%= f.submit "登録" %>
+  </div>
 <% end %>
 
 <%= link_to "トップ", root_path %>
