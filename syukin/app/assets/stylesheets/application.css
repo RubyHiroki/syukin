@@ -22,7 +22,7 @@
  body {
    background-color: #1d577e;
  }
- h1, p, a {
+ h1, p, .nav a {
    color: #dca682;
  }
  h1 {
@@ -43,6 +43,9 @@
  /* 回収金入力編集画面 */
  input {
    font-size: 1.5rem;
+ }
+ a {
+   color: white;
  }
  .pagetitle {
    font-size: 3rem;
@@ -65,12 +68,22 @@
 
  /* 一覧 */
  .data {
-   font-size: 2.5rem;
+   font-size: 2rem;
    color: #996b4d;
    text-align: center;
  }
  .input-data {
-   font-size: 2rem;
+   font-size:1.5rem;
    color: #dca682;
    text-align: center;
+ }
+ .main-data {
+   font-size: 2.5rem;
+   color: #996b4d;
+   text-align: center;
+ }
+ .main-input-data {
+  font-size: 2.3rem;
+  color: #2e1200;
+  text-align: center;
  }
